@@ -1,0 +1,394 @@
+.main {
+  background-color: #1c1243;
+}
+.main > h1 {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  padding-top: 30px;
+  font-size: 60px;
+}
+.homepage {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 20px;
+  margin: 30px auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  height: 90%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.number {
+  color: #f5c518;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+}
+
+.image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.types {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  color: #d600da;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.type {
+  margin: 5px;
+  margin-left: 0px;
+  padding: 4px 10px 4px 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  width: 40%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.pagebtn {
+  display: flex;
+  justify-content: space-evenly;
+  width: 300px;
+}
+.pagination button {
+  background-color: #d600da;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pagebtn > button:disabled {
+  cursor: default;
+  background-color: #beb1df;
+}
+
+/* Left div */
+
+.mainContent {
+  background-color: #1c1243;
+  width: 100%;
+  height: 100vh;
+}
+.mainContent > h1 {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  padding-top: 30px;
+  font-size: 60px;
+}
+.content {
+  background-color: #fff;
+  width: 70%;
+  height: 80%;
+  margin: auto;
+  border-radius: 10px;
+  margin: 30px auto;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.imgdiv {
+  height: 100%;
+  width: 50%;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.contentName {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+}
+
+.contentimg {
+  width: 100%;
+  height: 60%;
+  padding: 10px 80px;
+}
+
+.leftBottomDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 24%;
+  margin: 0 auto;
+  column-gap: 10px;
+}
+.height .icons {
+  position: absolute;
+  margin-left: -150px;
+  margin-top: 34px;
+}
+.height > h2 {
+  font-size: 28px;
+}
+.height > span {
+  font-weight: bold;
+}
+.height {
+  background-color: #d600da;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-evenly;
+}
+.height > p {
+  border-radius: 5px;
+  background-color: #dbd7e3;
+  width: fit-content;
+  padding: 6px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 3px 50px;
+}
+.weight .icons {
+  position: absolute;
+  margin-left: -130px;
+  margin-top: 34px;
+  width: fit-content;
+}
+.weight > h2 {
+  font-size: 28px;
+}
+.weight {
+  background-color: #d600da;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-evenly;
+}
+.weight > p {
+  border-radius: 5px;
+  background-color: #dbd7e3;
+  width: fit-content;
+  padding: 6px;
+  height: 26%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 3px 50px;
+}
+
+/* Right Div */
+.rdiv {
+  width: 50%;
+  height: 60%;
+  margin: 60px 20px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  background-color: #f5c518;
+  border-radius: 10px;
+}
+.classification {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 30px;
+}
+.classification > p {
+  background-color: #dbd7e3;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+.typesdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contenttypes {
+  display: flex;
+  gap: 1rem;
+}
+.contenttype {
+  background-color: #dbd7e3;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.weaknessdiv {
+  padding-left: 30px;
+}
+.weaknesses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.weakness {
+  background-color: #dbd7e3;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.resistantdiv {
+  width: 100%;
+}
+.resistants {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 8px;
+}
+.resistant {
+  background-color: #dbd7e3;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 12px;
+  margin-top: 8px;
+  margin-right: 5px;
+}
+
+/* Poke Ball */
+
+.evolutions {
+  display: flex;
+  align-items: center;
+  width: 550px;
+  justify-content: center;
+}
+
+.pokeball:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.pokeball {
+  transition: transform 0.2s ease-in-out;
+}
+
+.evolution_pokeball {
+  position: absolute;
+  margin-top: -12%;
+  margin-right: -33%;
+}
+
+.evolutionContent {
+  display: flex;
+  justify-content: center;
+}
+.evolutioninner {
+  background-color: #d600da;
+  width: 70%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  margin-top: 68px;
+}
+
+.evolmaindiv {
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+}
+.evolcards {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.evolcard {
+  /* width: fit-content; */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.evolimgdiv {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  border-radius: 50%;
+  align-items: center;
+}
+.evolimg {
+  height: 70%;
+  width: 70%;
+}
+.evolname {
+  font-size: 2rem;
+  color: white;
+}
+
+.evoltypes {
+  display: flex;
+  gap: 1rem;
+}
+
+.evoltypes > p {
+  background-color: #dbd7e3;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.evolfinaltxt {
+  display: flex;
+  justify-content: center;
+  color: #f5c518;
+  font-size: 28px;
+}
