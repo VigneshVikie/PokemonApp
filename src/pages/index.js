@@ -25,6 +25,8 @@ export default function Home({ pokemons, page }) {
       <div className={styles.main}>
         <Head>
           <title>Pokemon</title>
+          <link rel="icon" href="https://img.icons8.com/fluency/48/null/pokemon.png"/>
+          
         </Head>
 
         <h1>Pokemons</h1>
