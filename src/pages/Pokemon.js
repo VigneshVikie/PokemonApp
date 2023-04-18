@@ -10,19 +10,19 @@ const Pokemon = (pokemon) => {
         onClick={() =>
           router.push({
             pathname: "/DetailsPage",
-            query: { data: data.id },
+            query: { data: data?.id },
           })
         }
         key={data.id}
         className={styles.card}
       >
-        <h2 className={styles.number}>#{data.number}</h2>
+        <h2 className={styles.number}>#{data?.number}</h2>
 
-        <img className={styles.image} src={data.image} alt={data.name} />
-        <p className={styles.name}>{data.name}</p>
+        <img className={styles.image} src={data?.image} alt={data?.name} />
+        <p className={styles.name}>{data?.name}</p>
         <div className={styles.types}>
-          {data.types.map((type, index) => (
-            <p key={`${data.id}-${index}`} className={styles.type}>
+          {data?.types?.map((type, index) => (
+            <p key={`${data?.id}-${index}`} className={styles.type}>
               {type}
             </p>
           ))}

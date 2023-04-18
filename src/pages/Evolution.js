@@ -47,7 +47,7 @@ const Evolution = ({ evolutionId }) => {
                 </div>
               ))}
         </div>
-        {pokemons.length <= 1 && (
+        {pokemons?.length <= 1 && (
           <h2 className={styles.evolfinaltxt}>
             This is the final Evolution of this Pokemon
           </h2>
