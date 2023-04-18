@@ -13,7 +13,7 @@ const Pokemon = (pokemon) => {
             query: { data: data?.id },
           })
         }
-        key={data.id}
+        key={data?.id}
         className={styles.card}
       >
         <h2 className={styles.number}>#{data?.number}</h2>
