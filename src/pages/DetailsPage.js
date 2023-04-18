@@ -1,22 +1,33 @@
-import { isArray } from "@apollo/client/utilities";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Evolution from "@/components/Evolution";
+import Evolution from "@/pages/Evolution";
+import { useQuery } from "@apollo/client";
+import { GET_POKEMON } from "../../graphql/PokemonQuery";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "https://graphql-pokemon2.vercel.app",
+  cache: new InMemoryCache(),
+});
 
 const DetailsPage = () => {
   const router = useRouter();
   const { data } = router.query;
-  const pokemon = JSON.parse(data);
   const [open, setOpen] = useState(false);
 
-  let evolutionId = pokemon.evolutions?.map((evol) => {
+  const { data: pokeData } = useQuery(GET_POKEMON, {
+    variables: { id: `'${data}'` },
+  });
+  const pokemon = pokeData?.pokemon;
+
+  let evolutionId = pokemon?.evolutions?.map((evol) => {
     return evol.id;
   });
-  //   evolutionId?.push(`${pokemon.id}`);
 
-  evolutionId === undefined ? evolutionId=[pokemon.id] : evolutionId?.push(`${pokemon.id}`);
-  console.log(evolutionId)
+  evolutionId === undefined
+    ? (evolutionId = [pokemon?.id])
+    : evolutionId?.push(`${pokemon?.id}`);
 
   const handleClickEvolutions = () => {
     setOpen(!open);
@@ -24,16 +35,15 @@ const DetailsPage = () => {
 
   return (
     <div>
-      {}
       <div className={styles.mainContent}>
         <h1>Pokemons</h1>
         {!open && (
           <div className={styles.content}>
             <div className={styles.contentName}>
-              <h1> {pokemon.name}</h1>
+              <h1> {pokemon?.name}</h1>
             </div>
             <div className={styles.imgdiv}>
-              <img className={styles.contentimg} src={pokemon.image}></img>
+              <img className={styles.contentimg} src={pokemon?.image}></img>
               <div className={styles.leftBottomDiv}>
                 <div className={styles.height}>
                   <div className={styles.icons}>
@@ -41,10 +51,10 @@ const DetailsPage = () => {
                   </div>
                   <h2>Height</h2>
                   <p>
-                    <strong>Max: </strong> {pokemon.height.maximum}
+                    <strong>Max: </strong> {pokemon?.height.maximum}
                   </p>
                   <p>
-                    <strong>Min: </strong> {pokemon.height.minimum}
+                    <strong>Min: </strong> {pokemon?.height.minimum}
                   </p>
                 </div>
                 <div className={styles.weight}>
@@ -53,10 +63,10 @@ const DetailsPage = () => {
                   </div>
                   <h2>Weight</h2>
                   <p>
-                    <strong>Max:</strong> {pokemon.weight.maximum}
+                    <strong>Max:</strong> {pokemon?.weight.maximum}
                   </p>
                   <p>
-                    <strong>Min:</strong> {pokemon.weight.minimum}
+                    <strong>Min:</strong> {pokemon?.weight.minimum}
                   </p>
                 </div>
               </div>
@@ -64,12 +74,12 @@ const DetailsPage = () => {
             <div className={styles.rdiv}>
               <div className={styles.classification}>
                 <h2>Category</h2>
-                <p>{pokemon.classification}</p>
+                <p>{pokemon?.classification}</p>
               </div>
               <div className={styles.typesdiv}>
                 <h2>Type</h2>
                 <div className={styles.contenttypes}>
-                  {pokemon.types.map((type, index) => (
+                  {pokemon?.types.map((type, index) => (
                     <p
                       key={`${pokemon.id}-${index}`}
                       className={styles.contenttype}
@@ -82,7 +92,7 @@ const DetailsPage = () => {
               <div className={styles.weaknessdiv}>
                 <h2>Weakness</h2>
                 <div className={styles.weaknesses}>
-                  {pokemon.weaknesses.map((weakness, index) => (
+                  {pokemon?.weaknesses.map((weakness, index) => (
                     <p
                       key={`${pokemon.id}-${index}`}
                       className={styles.weakness}
@@ -95,7 +105,7 @@ const DetailsPage = () => {
               <div className={styles.resistantdiv}>
                 <h2>Resistant</h2>
                 <div className={styles.resistants}>
-                  {pokemon.resistant.map((resist, index) => (
+                  {pokemon?.resistant.map((resist, index) => (
                     <p
                       key={`${pokemon.id}-${index}`}
                       className={styles.resistant}

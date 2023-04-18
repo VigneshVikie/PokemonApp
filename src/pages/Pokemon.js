@@ -1,6 +1,5 @@
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
-import DetailsPage from "@/pages/DetailsPage";
 
 const Pokemon = (pokemon) => {
   const data = pokemon.pokemon;
@@ -11,7 +10,7 @@ const Pokemon = (pokemon) => {
         onClick={() =>
           router.push({
             pathname: "/DetailsPage",
-            query: { data: JSON.stringify(data) },
+            query: { data: data.id },
           })
         }
         key={data.id}
@@ -32,7 +31,5 @@ const Pokemon = (pokemon) => {
     </>
   );
 };
-
-
 
 export default Pokemon;
